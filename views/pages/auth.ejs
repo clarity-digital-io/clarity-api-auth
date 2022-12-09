@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<% include ../partials/header.ejs %>
+</head>
+<body>
+<div class="jumbotron text-center">
+  <div class="container">
+	<h1 id="message"></h1>
+	<p>It at least got this far</p>
+</div>
+</div>
+
+
+</body>
+
+<script type="text/javascript">
+
+	var hash = window.location.hash;
+	var idx = hash.indexOf('#access_token');
+	
+    if (idx >= 0) {
+		// has '#access_token' in URL
+		var at_str = hash.substring(idx);
+		var access_token = at_str.substring(at_str.indexOf('=') + 1).trim();
+		if (access_token !== "") {
+		  // we're good to go
+		  let split = access_token.match(/.{1,175}/g);
+		  console.log('access_token', split); 
+
+		  var message = document.getElementById('message');
+		  message.textContent += "Success!";
+		  //save to salesforce org and by posting to heroku service 
+		} else {
+		  console.error('This page found an empty access_token in the location hash.');
+		}
+	  } else {
+		console.error('This page expected an access_token in the location hash.');
+	  }
+	  
+</script>
+</html>

@@ -1,0 +1,18 @@
+.body {
+	background: #00305C;
+	color: white;
+	height: 100vh; 
+}
+
+.main {
+	margin: 0 auto; 
+	padding: 3em; 
+	background: #f5f5f5;
+}
+
+.primary {
+	background: #fff;
+	padding: 1em;  
+	color: #00305C; 
+	font-family: Arial, Helvetica, sans-serif;
+}

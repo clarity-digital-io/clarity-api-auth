@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+</head>
+<script src="https://cdn.auth0.com/js/auth0/9.11/auth0.min.js"></script>
+<script type="text/javascript">
+	
+	let client_id = '3MVG9Z8h6Bxz0zc4V._snL15FoAiplfkytTOtBLV3KgC7W.r6akZU8Q9Sk5XL_s1gCMGHIn_2i3nmygf5BxWt'; 
+	let redirect_uri = 'https://clarity-api-auth.herokuapp.com/auth'; 
+	let url = `https://test.salesforce.com/services/oauth2/authorize?response_type=code&
+		client_id=${client_id}&
+		redirect_uri=${redirect_uri}&
+		scope=refresh_token+full+api`;
+
+  function login() {
+
+	window.open(url, "CNN_WindowName", "resizable,scrollbars,status");
+
+  }
+
+</script>
+<body>
+
+	<div class="main">
+		<div class="container">
+			<a type="button" class="primary" onclick="login()"><span class="glyphicon glyphicon-download"></span> Authenticate with Salesforce</a>
+		</div>
+	</div>
+	
+</body>
+</html>
